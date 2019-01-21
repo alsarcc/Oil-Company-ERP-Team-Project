@@ -1,0 +1,53 @@
+﻿@model OilTeamProject.ViewModels.ProductStockFromViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutDash.cshtml";
+}
+
+
+<h2>Add a Product to Stock</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.Id)
+
+
+    <div class="form-group col-md-4">
+        <div class="form-group">
+            @Html.LabelFor(m => m.ActualQuantity)
+            @Html.TextBoxFor(m => m.ActualQuantity, new { @class = "form-control" , placeholder = "1 - 5000" })
+            @Html.ValidationMessageFor(m => m.ActualQuantity, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.AvailableQuantity)
+            @Html.TextBoxFor(m => m.AvailableQuantity, new { @class = "form-control", placeholder = "1 - 5000" })
+            @Html.ValidationMessageFor(m => m.AvailableQuantity, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Product")
+            @Html.DropDownListFor(m => m.ProductID, new SelectList(Model.Products, "ID", "Name"), "--Select--", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ProductID, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Bottling Date")
+            @Html.DropDownListFor(m => m.BottlingID, new SelectList(Model.Bottlings, "BottlingID", "BottlingDate"), "--Select--", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.BottlingID, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Sector")
+            @Html.DropDownListFor(m => m.SectorID, new SelectList(Model.Sectors, "ID", "Name"), "--Select--", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.SectorID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+}
+

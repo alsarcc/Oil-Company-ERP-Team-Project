@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OilTeamProject", "OilTeamProject\OilTeamProject.csproj", "{F07AE0F6-CFFF-4C27-8460-0CBF7C3AE8D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F07AE0F6-CFFF-4C27-8460-0CBF7C3AE8D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F07AE0F6-CFFF-4C27-8460-0CBF7C3AE8D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F07AE0F6-CFFF-4C27-8460-0CBF7C3AE8D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F07AE0F6-CFFF-4C27-8460-0CBF7C3AE8D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E6296294-C858-48F0-B7AC-E2B1B73BC6FD}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://periaidinopoulos.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = OilTeamProject\\OilTeamProject.csproj
+		SccProjectName1 = OilTeamProject
+		SccLocalPath1 = OilTeamProject
+	EndGlobalSection
+EndGlobal

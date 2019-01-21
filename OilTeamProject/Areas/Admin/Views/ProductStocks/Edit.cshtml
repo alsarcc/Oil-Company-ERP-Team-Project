@@ -1,0 +1,47 @@
+﻿@model OilTeamProject.ViewModels.ProductStockFromViewModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutDash.cshtml";
+}
+
+
+<h2>Update</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.ProductID)
+    @Html.HiddenFor(m => m.SectorID)
+    @Html.HiddenFor(m => m.BottlingID)
+
+    <h4 class="text-left"> Product Stock @Model.Id - @Model.Name</h4>
+
+    <hr />
+
+    <div class="form-group col-md-4">
+
+        <div class="form-group">
+            @Html.Label("Expiration Date")
+            @Html.DisplayFor(m => m.ExpirationDate, new { @class = "form-control"})
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.ActualQuantity)
+            @Html.TextBoxFor(m => m.ActualQuantity, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ActualQuantity, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.AvailableQuantity)
+            @Html.TextBoxFor(m => m.AvailableQuantity, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.AvailableQuantity, "", new { @class = "text-danger" })
+        </div>
+
+    </div>
+
+    <div class="col-md-12">
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+}
+

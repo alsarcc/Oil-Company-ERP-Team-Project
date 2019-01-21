@@ -1,0 +1,41 @@
+﻿@model OilTeamProject.ViewModels.ShiftFormViewModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Shifts"))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.ShiftId)
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Date)
+        @Html.TextBoxFor(m => m.Date, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Date)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.DayOfWeek)
+        @Html.EnumDropDownListFor(m => m.DayOfWeek, "Select Day", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.DayOfWeek)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ShiftTypeId)
+        @Html.DropDownListFor(m => m.ShiftTypeId, new SelectList(Model.ShiftTypes, "Id", "Name"), "Select", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ShiftTypeId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.DepartmentId)
+        @Html.DropDownListFor(m => m.DepartmentId, new SelectList(Model.Departments, "Id", "Name"), "Select", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.DepartmentId)
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg">Save</button>
+
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
